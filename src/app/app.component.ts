@@ -6,5 +6,7 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent {
-  title = 'home-work2';
 }
+
+
+// https://docs.google.com/document/d/1_otbONlCxoCZt9pA8m83HnkN-BACkSGAAlgCdJhNUW0/edit
