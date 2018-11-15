@@ -6,10 +6,11 @@
     <div class="element-left-bottom">
       <div class="ele-strip">
         <ul>
-          <li><a href="#">Hotel</a></li>
-          <li><a href="#">Fishing</a></li>
-          <li><a href="#">Tours</a></li>
-          <li class="anc-bor"><a href="#">Weather</a></li>
+          <li (click)="onChangeType('all')"><a>All</a></li>
+          <li (click)="onChangeType('hotel')"><a>Hotel</a></li>
+          <li (click)="onChangeType('fishing')"><a>Fishing</a></li>
+          <li (click)="onChangeType('tours')"><a>Tours</a></li>
+          <li class="anc-bor" (click)="onChangeType('weather')"><a>Weather</a></li>
         </ul>
       </div>
       <div class="village">
@@ -18,7 +19,7 @@
         <div class="activity_box">
           <div class="scrollbar" id="style-2">
             <ng-container *ngIf="(data$ | async) as items">
-              <app-main *ngFor="let item of items" [item]="item" (click)="onSelect(item)"></app-main>
+              <app-main *ngFor="let item of items | typeFilter : typeFilter" [item]="item" (click)="onSelect(item)"></app-main>
             </ng-container>
           </div>
         </div>
